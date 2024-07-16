@@ -65,8 +65,9 @@ export function Inbox({
                             <MailList items={mails} />
                         </TabsContent>
                         <TabsContent value="unread" className="m-0">
-                            <MailList items={mails.filter((item) => !item.read)} />
+                            <MailList items={mails} />
                         </TabsContent>
+                        )
                     </Tabs>
                 </ResizablePanel>
                 <ResizableHandle withHandle />

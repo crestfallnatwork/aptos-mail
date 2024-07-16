@@ -14,7 +14,7 @@ import { useRouter } from 'next/navigation'
 import { useGlobalState } from '@/lib/globalState'
 import { FormEvent } from 'react'
 
-export default function ComposePage() {
+function ComposePage() {
     const router = useRouter()
     const pkey = useGlobalState((state) => state.privateKey)
     const setPkey = useGlobalState((state) => state.setPrivateKey)
@@ -61,3 +61,5 @@ export default function ComposePage() {
       ) : router.replace('/login')
     )
 }
+
+export default ComposePage;

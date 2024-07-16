@@ -17,7 +17,7 @@ import { useGlobalState } from "@/lib/globalState"
 
 
 
-export function CardWithForm() {
+function CardWithForm() {
     const router = useRouter()
     const pkey = useGlobalState((state) => state.privateKey)
     const setPkey = useGlobalState((state) => state.setPrivateKey)
@@ -25,7 +25,7 @@ export function CardWithForm() {
         e.preventDefault()
         const formData = new FormData(e.currentTarget)
         const sk = formData.get('private-key')
-        setPkey(sk as string)
+        await setPkey(sk as string)
     }
     return (
         pkey === "" ?
@@ -48,7 +48,9 @@ export function CardWithForm() {
                     </CardFooter>
                 </Card>
             </form>) :
-            router.replace('/')
+        <div>
+            Redirecting {router.replace('/') === null}
+        </div>
     )
 }
 

@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/tabs"
 import { Separator } from "@/components/ui/separator"
 
-export default function ComposePage() {
+function ComposePage() {
     return (
         <div>
             <Tabs defaultValue="inbox">
@@ -42,3 +42,5 @@ export default function ComposePage() {
         </div>
     )
 }
+
+export default ComposePage
