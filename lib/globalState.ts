@@ -11,7 +11,13 @@ interface GlobalState {
 export const useGlobalState = create<GlobalState>()(
     persist((set) => ({
         privateKey: "",
-        setPrivateKey: (sk: string) => { set((state) => ({ privateKey: sk })) }
+        setPrivateKey: (sk: string) => {
+            set((state) => {
+                return {
+                    privateKey: sk
+                }
+            })
+        }
     }),
         {
             name: "global-state"
