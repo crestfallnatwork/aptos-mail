@@ -1,6 +1,7 @@
 "use client"
 
-import { ComposeBox } from '@/app/compose/components/send'
+import { Compose } from './components/compose'
+import { ComposeBox } from './components/send'
 import {
     Tabs,
     TabsContent,
@@ -8,7 +9,6 @@ import {
     TabsTrigger,
 } from "@/components/ui/tabs"
 import { Separator } from "@/components/ui/separator"
-import InboxPage from "@/app/inbox/page"
 
 export default function ComposePage() {
     return (
@@ -34,7 +34,6 @@ export default function ComposePage() {
                 </div>
                 <Separator />
                 <TabsContent value="inbox" className="m-0">
-                <InboxPage/>
                 </TabsContent>
                 <TabsContent value="compose" className="m-0">
                     <ComposeBox/>
